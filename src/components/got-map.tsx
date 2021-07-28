@@ -9,7 +9,7 @@ import { Sigil } from './sigil'
 import { SideContainer } from './side-container'
 import { HOUSES } from '../resources/constant'
 
-function GOTMap () {
+function GOTMap (): JSX.Element {
   const [houseList, setHouseList] = useState<House[]>()
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [showSideContainer, setShowSideContainer] = useState<boolean>(false)
@@ -38,7 +38,13 @@ function GOTMap () {
     fetch('https://www.anapioficeandfire.com/api/houses')
       .then(response => response.json())
       .then(response => setHouseList(response))
-      .catch(error => error && handleError(error))
+      .catch(
+        error =>
+          error &&
+          handleError(
+            'It has failed to load Game Of Thrones houses details! Try again later.'
+          )
+      )
   }, [])
 
   useEffect(() => {
@@ -49,38 +55,38 @@ function GOTMap () {
     }
   }, [selectedHouse])
 
+  if (houseList) {
+    return (
+      <div className='map-container'>
+        <img id='got-map' src={gotMap} alt='map' />
+        <div className='map-body'>
+          <img id='got-logo' src={gotLogo} alt='logo' />
+          {houseList?.map(house => {
+            const houseFound = HOUSES.find(h => h.url === house.url)
+            if (houseFound) {
+              return (
+                <Sigil
+                  handleSideContainer={handleSideContainer}
+                  houseSigil={houseFound}
+                  houseName={house.name}
+                />
+              )
+            }
+            return null
+          })}
+          <SideContainer
+            showContainer={showSideContainer}
+            showHouse={selectedHouse}
+            handleCloseButton={handleCloseSideContainer}
+          />
+        </div>
+      </div>
+    )
+  }
+  if (errorMessage !== '') return <h2 id='error-text'>{errorMessage}</h2>
   return (
-    <div>
-      {houseList ? (
-        <div className='map-container'>
-          <img id='got-map' src={gotMap} alt='map' />
-          <div className='map-body'>
-            <img id='got-logo' src={gotLogo} alt='logo' />
-            {houseList?.map(house => {
-              const houseFound = HOUSES.find(h => h.url === house.url)
-              if (houseFound) {
-                return (
-                  <Sigil
-                    handleSideContainer={handleSideContainer}
-                    houseSigil={houseFound}
-                    houseName={house.name}
-                  />
-                )
-              }
-              return null
-            })}
-            <SideContainer
-              showContainer={showSideContainer}
-              showHouse={selectedHouse}
-              handleCloseButton={handleCloseSideContainer}
-            />
-          </div>
-        </div>
-      ) : (
-        <div id='loader'>
-          <Loader type='ThreeDots' color='#F2F2F2' height={100} width={100} />
-        </div>
-      )}
+    <div id='loader'>
+      <Loader type='ThreeDots' color='#F2F2F2' height={100} width={100} />
     </div>
   )
 }

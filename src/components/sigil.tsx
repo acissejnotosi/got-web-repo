@@ -4,7 +4,7 @@ export const Sigil = ({
   handleSideContainer,
   houseSigil,
   houseName
-}: SigilProps) => (
+}: SigilProps): JSX.Element => (
   <div
     className='sigil-container'
     style={{
@@ -16,12 +16,15 @@ export const Sigil = ({
       aria-label='Sigil button'
       type='button'
       className='button-sigil'
+      data-testid='button-sigil'
       value={houseName}
       onClick={e => handleSideContainer(e)}
       style={{
         backgroundImage: `url(${houseSigil?.image})`
       }}
     />
-    <span className='house-name'>{houseName}</span>
+    <span className='house-name' data-testid='house-name'>
+      {houseName}
+    </span>
   </div>
 )

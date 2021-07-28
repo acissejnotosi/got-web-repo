@@ -3,7 +3,7 @@ import { DisplayDetailsTextType } from '../types'
 export const DisplayDetailsText = ({
   detail,
   title
-}: DisplayDetailsTextType) => (
+}: DisplayDetailsTextType): JSX.Element => (
   <>
     {detail?.toString() !== '' && (
       <>

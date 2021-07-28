@@ -25,6 +25,11 @@ code {
   z-index: 101;
 }
 
+#error-text {
+  padding: 10px;
+  color: #f2f2f2;
+}
+
 .map-container {
   position: relative;
   img {
@@ -53,30 +58,34 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.button-sigil {
-  z-index: 3;
-  width: 50px;
-  height: 60px;
-  background-repeat: no-repeat;
-  margin: 0px;
-  overflow: hidden;
-  border: none;
-  cursor: pointer;
-  background: round;
-  opacity: 0.8;
-  &:hover {
-    opacity: 1;
+  .button-sigil {
+    z-index: 3;
+    width: 50px;
+    height: 60px;
+    background-repeat: no-repeat;
+    margin: 0px;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background: round;
+    opacity: 0.8;
   }
-}
 
-.house-name {
-  z-index: 3;
-  color: #f2f2f2;
-  background-color: #0d0d0d;
-  opacity: 0.7;
-  padding: 5px 10px 5px 10px;
+  .house-name {
+    z-index: 3;
+    color: #f2f2f2;
+    background-color: #0d0d0d;
+    opacity: 0.7;
+    padding: 5px 10px 5px 10px;
+  }
+  &:hover {
+    .button-sigil {
+      opacity: 1;
+    }
+    .house-name {
+      opacity: 1;
+    }
+  }
 }
 
 #side-container {
@@ -91,6 +100,26 @@ code {
   z-index: 4;
   transition: width 0.1s;
   overflow: hidden;
+  .side-content {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 15px;
+    height: 100%;
+    color: #f2f2f2;
+  }
+  .side-box {
+    box-shadow: 0 2px 6px rgb(50 50 93 / 20%);
+    background-color: #454545;
+    padding: 10px;
+    color: #f2f2f2;
+    margin: 0 0 20px 0;
+    border-radius: 4px;
+  }
+  .side-content-main-title {
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
 }
 
 .close-btn {
@@ -120,27 +149,4 @@ code {
 }
 .close-btn:hover {
   color: #f1f1f1;
-}
-
-.side-content {
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 50px 15px;
-  height: 100%;
-  color: #f2f2f2;
-}
-
-.side-box {
-  box-shadow: 0 2px 6px rgb(50 50 93 / 20%);
-  background-color: #454545;
-  padding: 10px;
-  color: #f2f2f2;
-  margin: 0 0 20px 0;
-  border-radius: 4px;
-}
-
-.side-content-main-title {
-  text-align: center;
-  margin: 0 0 10px 0;
 }

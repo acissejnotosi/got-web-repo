@@ -2,7 +2,9 @@ import { HouseComponentType } from '../types'
 import { DisplayDetailsList } from './display-details-list'
 import { DisplayDetailsText } from './display-details-text'
 
-export const HouseDetails = ({ houseDetails }: HouseComponentType) => (
+export const HouseDetails = ({
+  houseDetails
+}: HouseComponentType): JSX.Element => (
   <div className='side-content'>
     <h1 className='side-content-main-title'>{houseDetails?.name}</h1>
     <div className='side-box'>
@@ -14,7 +16,6 @@ export const HouseDetails = ({ houseDetails }: HouseComponentType) => (
       <DisplayDetailsText detail={houseDetails?.words} title='Words' />
       <DisplayDetailsList details={houseDetails?.titles} title='Titles' />
       <DisplayDetailsList details={houseDetails?.seats} title='Seats' />
-      <DisplayDetailsText detail={houseDetails?.heir} title='Heir' />
       <DisplayDetailsText detail={houseDetails?.founded} title='Founded' />
       <DisplayDetailsList
         details={houseDetails?.ancestralWeapons}

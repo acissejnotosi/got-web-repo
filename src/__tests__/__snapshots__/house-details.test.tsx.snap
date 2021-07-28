@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with list inside house details 1`] = `
+<div
+  className="side-content"
+>
+  <h1
+    className="side-content-main-title"
+  >
+    House Allyrion of Godsgrace
+  </h1>
+  <div
+    className="side-box"
+  >
+    <h2>
+      Region
+    </h2>
+    <p>
+      Dorne
+    </p>
+    <h2>
+      Coat Of Arms
+    </h2>
+    <p>
+      Gyronny Gules and Sable, a hand couped Or
+    </p>
+    <h2>
+      Words
+    </h2>
+    <p>
+      No Foe May Pass
+    </p>
+    <h2>
+      Seats
+    </h2>
+    <ul>
+      <li>
+        Godsgrace
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with no house details 1`] = `
+<div
+  className="side-content"
+>
+  <h1
+    className="side-content-main-title"
+  >
+    
+  </h1>
+  <div
+    className="side-box"
+  />
+</div>
+`;
+
+exports[`renders correctly with one house 1`] = `
+<div
+  className="side-content"
+>
+  <h1
+    className="side-content-main-title"
+  >
+    House Algood
+  </h1>
+  <div
+    className="side-box"
+  >
+    <h2>
+      Region
+    </h2>
+    <p>
+      The Westerlands
+    </p>
+    <h2>
+      Coat Of Arms
+    </h2>
+    <p>
+      A golden wreath, on a blue field with a gold border(Azure, a garland of laurel within a bordure or)
+    </p>
+  </div>
+</div>
+`;

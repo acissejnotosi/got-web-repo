@@ -1,18 +1,18 @@
-import { House, SideContainerProps } from '../types'
+import { SideContainerProps } from '../types'
 import { HouseDetails } from './house-details'
 
 export const SideContainer = ({
   showContainer,
   showHouse,
   handleCloseButton
-}: SideContainerProps) => {
+}: SideContainerProps): JSX.Element => {
   if (showContainer) {
     return (
       <div id='side-container' style={{ width: '500px' }}>
         <button type='button' className='close-btn' onClick={handleCloseButton}>
           &times;
         </button>
-        <HouseDetails  houseDetails={showHouse} />
+        <HouseDetails houseDetails={showHouse} />
       </div>
     )
   }
