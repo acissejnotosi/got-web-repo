@@ -1,0 +1,146 @@
+/* everything that is reusable – buttons, navbars, cards, and so on */
+
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../resources/fonts/Kameron-Regular.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: "MyWebFont", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0d0d0d;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+#loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 101;
+}
+
+.map-container {
+  position: relative;
+  img {
+    &#got-map {
+      top: 0%;
+      left: 0%;
+      width: max-content;
+      height: auto;
+    }
+  }
+
+  .map-body {
+    img {
+      &#got-logo {
+        position: absolute;
+        z-index: 2;
+        top: -60px;
+        left: 1000px;
+      }
+    }
+  }
+}
+
+.sigil-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-sigil {
+  z-index: 3;
+  width: 50px;
+  height: 60px;
+  background-repeat: no-repeat;
+  margin: 0px;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  background: round;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.house-name {
+  z-index: 3;
+  color: #f2f2f2;
+  background-color: #0d0d0d;
+  opacity: 0.7;
+  padding: 5px 10px 5px 10px;
+}
+
+#side-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 400px;
+  background: #333333;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 70%);
+  z-index: 4;
+  transition: width 0.1s;
+  overflow: hidden;
+}
+
+.close-btn {
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  color: #0d0d0d;
+  position: absolute;
+  top: 10px;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  z-index: 2;
+  padding: 3px 2px;
+  line-height: 8px;
+  font-size: 2em;
+  border: none;
+  background: transparent;
+}
+
+.close-btn:before {
+  box-sizing: border-box;
+}
+
+.close-btn:before {
+  box-sizing: border-box;
+}
+.close-btn:hover {
+  color: #f1f1f1;
+}
+
+.side-content {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 15px;
+  height: 100%;
+  color: #f2f2f2;
+}
+
+.side-box {
+  box-shadow: 0 2px 6px rgb(50 50 93 / 20%);
+  background-color: #454545;
+  padding: 10px;
+  color: #f2f2f2;
+  margin: 0 0 20px 0;
+  border-radius: 4px;
+}
+
+.side-content-main-title {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
